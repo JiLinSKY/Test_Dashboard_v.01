@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/public/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<title>Hot Ice</title>
+	</head>
+	<body class="bg-zinc-100">
+		<header
+			class="bg-slate-900 opa text-white flex justify-between h-14 items-center px-8 top-0 left-0 right-0 z-50 fixed">
+			<logo>
+				<a class="flex items-center gap-2" href="#">
+					<img
+						class="h-8 -mt-1"
+						src="https://img.icons8.com/small/64/ffffff/fire-heart.png"
+						alt="fire-heart" />
+					<span class="">Pictures</span>
+				</a>
+			</logo>
+			<div class="flex items-center justify-end cursor-pointer md:hidden">
+				<span class="material-symbols-outlined">menu</span>
+			</div>
+			<nav class="hidden md:block z-50">
+				<ul
+					class="flex items-center gap-2 [&>li>div>button]:p-2 [&>li>div>button:hover]:bg-slate-700 [&>li>div>button]:rounded-lg">
+					<li>
+						<div x-data="{ open: false }" @click.away="open = false">
+							<button @click="open = ! open ">Sing In</button>
+							<div x-show="open" >
+								<div>
+									<div
+										class="fixed top-0 left-0 w-full h-full flex items-center justify-center " >
+										<div
+											x-show="open" 
+											class="absolute inset-0 bg-white opacity-40 z-30"></div>
+										<div x-cloak @click.outside="open = false">
+											<div
+												class="relative bg-white rounded-lg shadow-lg z-50">
+												<div
+													class=" flex items-center justify-center" >
+													<div
+														class=" sm:mx-auto sm:w-full sm:max-w-[480px]">
+														<div
+															class="bg-white px-6 py-8 shadow sm:rounded-lg sm:px-12">
+															<form class="space-y-6" action="#" method="POST">
+																<div class="relative">
+																	<button
+																		@click="open = false"
+																		class="absolute right-1 text-gray-400 hover:text-gray-600 focus:outline-none">
+																		<svg
+																			xmlns="http://www.w3.org/2000/svg"
+																			class="h-6 w-6"
+																			fill="none"
+																			viewBox="0 0 24 24"
+																			stroke="currentColor">
+																			<path
+																				stroke-linecap="round"
+																				stroke-linejoin="round"
+																				stroke-width="2"
+																				d="M6 18L18 6M6 6l12 12" />
+																		</svg>
+																	</button>
+																	<label
+																		for="email"
+																		class="block text-sm font-medium leading-6 text-gray-900"
+																		>Email address</label
+																	>
+																	<div class="mt-2">
+																		<input
+																			id="email"
+																			name="email"
+																			type="email"
+																			autocomplete="email"
+																			required
+																			class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+																	</div>
+																</div>
+
+																<div>
+																	<label
+																		for="password"
+																		class="block text-sm font-medium leading-6 text-gray-900"
+																		>Password</label
+																	>
+																	<div class="mt-2">
+																		<input
+																			id="password"
+																			name="password"
+																			type="password"
+																			autocomplete="current-password"
+																			required
+																			class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+																	</div>
+																</div>
+
+																<div class="flex items-center justify-between">
+																	<div class="flex items-center">
+																		<input
+																			id="remember-me"
+																			name="remember-me"
+																			type="checkbox"
+																			class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+																		<label
+																			for="remember-me"
+																			class="ml-3 block text-sm leading-6 text-gray-900"
+																			>Remember me</label
+																		>
+																	</div>
+
+																	<div class="text-sm leading-6">
+																		<a
+																			href="#"
+																			class="font-semibold text-indigo-600 hover:text-indigo-500"
+																			>Forgot password?</a
+																		>
+																	</div>
+																</div>
+
+																<div>
+																	<button
+																		type="submit"
+																		class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+																		Sign in
+																	</button>
+																</div>
+															</form>
+
+															<div>
+																<div class="relative mt-10">
+																	<div
+																		class="absolute inset-0 flex items-center"
+																		aria-hidden="true">
+																		<div
+																			class="w-full border-t border-gray-200"></div>
+																	</div>
+																	<div
+																		class="relative flex justify-center text-sm font-medium leading-6">
+																		<span class="bg-white px-6 text-gray-900"
+																			>Or continue with</span
+																		>
+																	</div>
+																</div>
+
+																<div class="mt-6 grid grid-cols-2 gap-4">
+																	<a
+																		href="#"
+																		class="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent">
+																		<svg
+																			class="h-5 w-5"
+																			viewBox="0 0 24 24"
+																			aria-hidden="true">
+																			<path
+																				d="M12.0003 4.75C13.7703 4.75 15.3553 5.36002 16.6053 6.54998L20.0303 3.125C17.9502 1.19 15.2353 0 12.0003 0C7.31028 0 3.25527 2.69 1.28027 6.60998L5.27028 9.70498C6.21525 6.86002 8.87028 4.75 12.0003 4.75Z"
+																				fill="#EA4335" />
+																			<path
+																				d="M23.49 12.275C23.49 11.49 23.415 10.73 23.3 10H12V14.51H18.47C18.18 15.99 17.34 17.25 16.08 18.1L19.945 21.1C22.2 19.01 23.49 15.92 23.49 12.275Z"
+																				fill="#4285F4" />
+																			<path
+																				d="M5.26498 14.2949C5.02498 13.5699 4.88501 12.7999 4.88501 11.9999C4.88501 11.1999 5.01998 10.4299 5.26498 9.7049L1.275 6.60986C0.46 8.22986 0 10.0599 0 11.9999C0 13.9399 0.46 15.7699 1.28 17.3899L5.26498 14.2949Z"
+																				fill="#FBBC05" />
+																			<path
+																				d="M12.0004 24.0001C15.2404 24.0001 17.9654 22.935 19.9454 21.095L16.0804 18.095C15.0054 18.82 13.6204 19.245 12.0004 19.245C8.8704 19.245 6.21537 17.135 5.2654 14.29L1.27539 17.385C3.25539 21.31 7.3104 24.0001 12.0004 24.0001Z"
+																				fill="#34A853" />
+																		</svg>
+																		<span
+																			class="text-sm font-semibold leading-6"
+																			>Google</span
+																		>
+																	</a>
+
+																	<a
+																		href="#"
+																		class="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent">
+																		<svg
+																			class="h-5 w-5 fill-[#24292F]"
+																			fill="currentColor"
+																			viewBox="0 0 20 20"
+																			aria-hidden="true">
+																			<path
+																				fill-rule="evenodd"
+																				d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+																				clip-rule="evenodd" />
+																		</svg>
+																		<span
+																			class="text-sm font-semibold leading-6"
+																			>GitHub</span
+																		>
+																	</a>
+																</div>
+															</div>
+															In
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<div class="flex justify-center">
+								<div
+									x-data="{
+            open: false,
+            toggle() {
+                if (this.open) {
+                    return this.close()
+                }
+
+                this.$refs.button.focus()
+
+                this.open = true
+            },
+            close(focusAfter) {
+                if (! this.open) return
+
+                this.open = false
+
+                focusAfter && focusAfter.focus()
+            }
+        }"
+									x-on:keydown.escape.prevent.stop="close($refs.button)"
+									x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+									x-id="['dropdown-button']"
+									class="relative">
+									<!-- Button -->
+									<button
+										x-ref="button"
+										x-on:click="toggle()"
+										:aria-expanded="open"
+										:aria-controls="$id('dropdown-button')"
+										type="button"
+										class="flex items-center gap-2 hover:bg-slate-700 px-5 py-2.5 rounded-md shadow">
+										Options
+
+										<!-- Heroicon: chevron-down -->
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="h-5 w-5 text-gray-400"
+											viewBox="0 0 20 20"
+											fill="currentColor">
+											<path
+												fill-rule="evenodd"
+												d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+												clip-rule="evenodd" />
+										</svg>
+									</button>
+
+									<!-- Panel -->
+									<div
+										x-ref="panel"
+										x-show="open"
+										x-transition.origin.top.left
+										x-on:click.outside="close($refs.button)"
+										:id="$id('dropdown-button')"
+										style="display: none"
+										class="absolute left-0 mt-2 w-40 rounded-md shadow-md bg-slate-800">
+										<a
+											href="#"
+											class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-slate-700 disabled:text-gray-500">
+											New Task
+										</a>
+
+										<a
+											href="#"
+											class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-slate-700 disabled:text-gray-500">
+											Edit Task
+										</a>
+
+										<a
+											href="#"
+											class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-slate-700 disabled:text-gray-500">
+											<span class="text-red-600">Delete Task</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section
+			class="grid bg-slate-800 bg-cover bg-center bg-[url('/img/bg.png')] text-white text-center">
+			<div
+				class="col-start-1 row-start-1 bg-gray-800 bg-opacity-40 w-full h-full"></div>
+			<div class="col-start-1 row-start-1 py-24 px-10">
+				<h1 class="flex justify-center font-bold text-4xl mb-5 font-sans">
+					Every picture is more powerful with a compelling caption
+				</h1>
+
+				<h4 class="flex justify-center mb-5">
+					Share pictures from Flickr and accompany it with your captions.
+				</h4>
+				<button
+					class="block m-auto bg-gray-900 hover:bg-gray-800 rounded-full p-4">
+					Create Account
+				</button>
+			</div>
+		</section>
+		<section class="grid grid-cols-3 max-w-7xl mx-auto mt-6">
+			<main class="col-span-2 mx-[10%]">
+				<a href="#">
+					<div class="card">
+						<img
+							class="w-full"
+							src="/img/Ледник_на_западном_побережье_Земли_Грейама.jpg"
+							alt="" />
+						<h1 class="text-center text-2xl font-medium py-2">
+							Beauty in Cracks
+						</h1>
+						<hr class="w-[20%] m-auto border-blue-500 border-y-2" />
+						<div class="flex justify-center py-3">
+							<a href="#" class="flex text-center">
+								<img
+									class="w-5 h-5 rounded-full"
+									src="/img/avatar.jpeg"
+									alt="avatar" />
+								<p class="text-center px-1">Andreas</p>
+							</a>
+						</div>
+					</div>
+				</a>
+			</main>
+			<aside class="col-span-1 mr-[20%]">
+				<div class="card">
+					<h2 class="py-2 px-6 text-xl font-medium">Catogories</h2>
+					<hr />
+					<ul>
+						<li class="px-4 py-1">
+							<a class="flex hover:bg-slate-200 rounded-md py-2 px-2" href="#">
+								<img
+									class="w-5 h-5"
+									src="/img/pets_FILL0_wght400_GRAD0_opsz24.png"
+									alt="" />
+								<p class="px-2">Animals</p>
+							</a>
+						</li>
+						<li class="px-4 py-1">
+							<a class="flex hover:bg-slate-200 rounded-md py-2 px-2" href="#">
+								<img
+									class="w-5 h-5"
+									src="/img/hotel_class_FILL0_wght400_GRAD0_opsz24.png"
+									alt="" />
+								<p class="px-2">People</p>
+							</a>
+						</li>
+						<li class="px-4 py-1">
+							<a class="flex hover:bg-slate-200 rounded-md py-2 px-2" href="#">
+								<img
+									class="w-5 h-5"
+									src="/img/person_FILL0_wght400_GRAD0_opsz24.png"
+									alt="" />
+								<p class="px-2">Urban</p>
+							</a>
+						</li>
+						<li class="px-4 py-1">
+							<a class="flex hover:bg-slate-200 rounded-md py-2 px-2" href="#">
+								<img
+									class="w-5 h-5"
+									src="/img/person_FILL0_wght400_GRAD0_opsz24.png"
+									alt="" />
+								<p class="px-2">Landscape</p>
+							</a>
+						</li>
+						<li class="px-4 py-1">
+							<a class="flex hover:bg-slate-200 rounded-md py-2 px-2" href="#">
+								<img
+									class="w-5 h-5"
+									src="/img/contrast_FILL0_wght400_GRAD0_opsz24.png"
+									alt="" />
+								<p class="px-2">Black & White</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="card">
+					<h2 class="py-2 px-6 text-xl font-medium">Top Photos</h2>
+					<hr />
+					<ul>
+						<li class="px-4 py-1">
+							<a
+								class="flex hover:bg-slate-200 rounded-md py-2 px-2 items-center"
+								href="#">
+								<img class="w-8 h-8 mr-2" src="/img/bg.png" alt="" />
+								<img
+									class="w-5 h-5 rounded-full"
+									src="/img/evil-cat-portrait-with-red-eyes-mad-angry-cat-avatar-illustration_691560-120.avif"
+									alt="avatar" />
+								<p class="px-2 flex-1">Nik</p>
+							</a>
+						</li>
+						<li class="px-4 py-1">
+							<a
+								class="flex hover:bg-slate-200 rounded-md py-2 px-2 items-center"
+								href="#">
+								<img
+									class="w-8 h-8 mr-2"
+									src="/img/Ледник_на_западном_побережье_Земли_Грейама.jpg"
+									alt="" />
+								<img
+									class="w-5 h-5 rounded-full"
+									src="/img/avatar.jpeg"
+									alt="avatar" />
+								<p class="px-2 flex-1">Andeas</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="card">
+					<h2 class="py-2 px-6 text-xl font-medium">Piple</h2>
+					<hr />
+					<ul>
+						<li class="px-4 py-1">
+							<a
+								class="flex hover:bg-slate-200 rounded-md py-2 px-2 items-center"
+								href="#">
+								<img
+									class="w-5 h-5 rounded-full"
+									src="/img/evil-cat-portrait-with-red-eyes-mad-angry-cat-avatar-illustration_691560-120.avif"
+									alt="avatar" />
+								<p class="px-2 flex-1">Nik</p>
+							</a>
+						</li>
+						<li class="px-4 py-1">
+							<a
+								class="flex hover:bg-slate-200 rounded-md py-2 px-2 items-center"
+								href="#">
+								<img
+									class="w-5 h-5 rounded-full"
+									src="/img/avatar.jpeg"
+									alt="avatar" />
+								<p class="px-2 flex-1">Andeas</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+		</section>
+
+		<script src="public/script.js"></script>
+	</body>
+</html>
