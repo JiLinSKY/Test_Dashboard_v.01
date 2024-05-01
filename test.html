@@ -1,0 +1,45 @@
+<tbody class="bg-white divide-y divide-gray-200">
+								<template x-for="item in filteredEmployees" :key="item.id">
+									<tr
+										class="hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-300 ease-in-out transform hover:scale-105">
+										<td class="px-6 py-4 whitespace-nowrap">
+											<div class="flex items-center">
+												<div class="ml-4">
+													<div
+														class="text-sm font-medium text-gray-900"
+														x-text="item.employee_name"></div>
+													<div class="text-sm text-gray-500"></div>
+												</div>
+											</div>
+										</td>
+										<td class="px-6 py-4 whitespace-nowrap">
+											<div
+												class="text-sm text-gray-900"
+												x-text="item.company"></div>
+										</td>
+										<td class="px-6 py-4 whitespace-nowrap">
+											<div
+												class="text-sm text-gray-900"
+												x-text="item.phone_number"></div>
+										</td>
+										<td class="px-6 py-4 whitespace-nowrap">
+											<div
+												class="text-sm text-gray-900 truncate ..."
+												x-text="item.email"></div>
+										</td>
+										<td class="px-6 py-4 whitespace-nowrap">
+											<div
+												class="text-sm text-gray-900"
+												x-text="item.country"></div>
+										</td>
+										<td class="px-6 py-4 whitespace-nowrap">
+											<span
+												x-bind:class="{
+            'inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800': item.status === 'Active',
+            'inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-500': item.status === 'Inactive'}"
+												x-text="item.status">
+											</span>
+										</td>
+									</tr>
+								</template>
+							</tbody>
